@@ -1,6 +1,6 @@
-# Google Adwords for CAOS
+# Google Ads for CAOS
 
-This mini plugin for CAOS allows you to track Google Adwords conversion with CAOS for WordPress.
+This mini plugin for CAOS allows you to track Google Ads conversion with CAOS for WordPress.
 
 ## Installation
 
@@ -10,4 +10,4 @@ Activate the plugin from within your WordPress Administrator-area in Plugins > I
 
 ## Configuration
 
-On line 23 of `caos-google-adwords.php` you can configure your Google Adwords ID.
+On line 23 of `caos-google-ads.php` you can configure your Google Adwords ID.

@@ -4,7 +4,7 @@
  * Plugin Name: Google Ads for CAOS
  * Plugin URI: https://daan.dev/google-adwords-caos/
  * Description: Track Google Ads conversions with CAOS.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Daan van den Bergh
  * Author URI: https://daan.dev
  * License: GPL2v2 or later
@@ -20,16 +20,14 @@ if (!defined('ABSPATH')) {
  */
 function caos_google_ads()
 {
-    $adsId = 'YOUR-ADS-ID';
+    $ads_id = 'YOUR-ADS-ID';
 
-    if (CAOS_OPT_REMOTE_JS_FILE == 'gtag.js') {
-        add_filter(
-            'caos_gtag_additional_config',
-            function() use ($adsId) {
-                return "gtag('config', '$adsId');";
-            }
-        );
-    }
+    add_filter(
+        'caos_gtag_additional_config',
+        function() use ($ads_id) {
+            return "gtag('config', '$ads_id');";
+        }
+    );
 }
 
 add_action('caos_process_settings', 'caos_google_ads');

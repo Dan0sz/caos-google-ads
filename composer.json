@@ -1,0 +1,13 @@
+{
+    "name": "caos/google-ads",
+    "description": "Add Google Ads tracking to CAOS.",
+    "authors": [
+        {
+            "name": "Daan van den Bergh",
+            "email": "help@daan.dev"
+        }
+    ],
+    "require": {
+        "composer/installers": "*"
+    }
+}

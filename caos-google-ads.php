@@ -1,6 +1,5 @@
 <?php
 /**
- * @formatter:off
  * Plugin Name: Google Ads for CAOS
  * Plugin URI: https://daan.dev/google-adwords-caos/
  * Description: Track Google Ads conversions with CAOS.
@@ -8,7 +7,6 @@
  * Author: Daan van den Bergh
  * Author URI: https://daan.dev
  * License: GPL2v2 or later
- * @formatter:on
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -5,12 +5,12 @@ on:
     types: [ released ]
 
 jobs:
-  tag:
-    name: New release
+  build:
+    name: Build Plugin Artifact
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Install composer dependencies
         uses: php-actions/composer@v2
@@ -19,12 +19,13 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: "16"
 
-      - name: Install npm dependencies
+      - name: Generate plugin artifact
         run: |
-          npm ci
-          sudo npm run build
+          rsync -rc --exclude-from="$GITHUB_WORKSPACE/.distignore" "$GITHUB_WORKSPACE/" release/ --delete --delete-excluded
+          cd "${GITHUB_WORKSPACE}/release" || exit
+          zip -r "${GITHUB_WORKSPACE}/caos-google-ads.zip" .
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
